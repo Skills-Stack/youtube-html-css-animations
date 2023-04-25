@@ -1,0 +1,22 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #262626;
+    --facebook-color: #6495ff;
+    --youtube-color: #e50000;
+    --twitter-color: #1da1f2;
+    --instagram-color: #e1306c;
+    --google-color: #db4437;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+}

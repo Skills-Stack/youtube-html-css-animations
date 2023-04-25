@@ -1,0 +1,167 @@
+* {
+    margin: 0;
+    padding: 0;
+    --text-color: #1eff00;
+}
+
+
+.container {
+    width: 100%;
+    height: 100vh;
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    
+    font-family: Poppins;
+}
+
+.child-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+    flex: 6;
+}
+
+.btn {
+    position: relative;
+    font-weight: 700;
+    display: inline-block;
+    height: 60px;
+    width: 200px;
+    text-decoration: none;
+    text-align: center;
+    line-height: 60px;
+    color: var(--button-color);
+    text-transform: uppercase;
+    overflow: hidden;
+}
+
+.btn span {
+    position: absolute;
+    display: block;
+}
+
+.title {
+    background-color: transparent;
+    color: white;
+    position: absolute;
+    top: 200px;
+    font-size: 50px;
+    animation: flicker 1.5s infinite alternate;
+}
+
+.btn:hover {
+    color: black;
+    background-color: var(--button-color);
+    box-shadow: 0 0 5px var(--button-color),
+        0 0 25px var(--button-color),
+        0 0 50px var(--button-color),
+        0 0 200px var(--button-color);
+}
+
+.btn span:nth-child(1) {
+    top: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, var(--button-color));
+    animation: animate1 1s linear infinite;
+}
+
+.btn span:nth-child(3) {
+    bottom: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, var(--button-color), transparent);
+    animation: animate3 1s linear infinite;
+}
+
+.btn span:nth-child(2) {
+    right: 0;
+    height: 100%;
+    width: 2px;
+    background: linear-gradient(180deg, transparent, var(--button-color));
+    animation: animate2 1s linear infinite;
+}
+
+.btn span:nth-child(4) {
+    left: 0;
+    width: 2px;
+    height: 100%;
+    background: linear-gradient(180deg, var(--button-color), transparent);
+    animation: animate4 1s linear infinite;
+}
+
+@keyframes animate1 {
+    0% {
+        left: -100%;
+    }
+
+    50%,
+    100% {
+        left: 100%;
+    }
+}
+
+@keyframes animate3 {
+    0% {
+        right: -100%;
+    }
+
+    50%,
+    100% {
+        right: 100%;
+    }
+}
+
+@keyframes animate2 {
+    0% {
+        top: -100%;
+    }
+
+    50%,
+    100% {
+        top: 100%;
+    }
+}
+
+@keyframes animate4 {
+    0% {
+        bottom: -100%;
+    }
+
+    50%,
+    100% {
+        bottom: 100%;
+    }
+}
+
+@keyframes flicker {
+
+    0%,
+    18%,
+    22%,
+    25%,
+    53%,
+    57%,
+    100% {
+        text-shadow:
+            0 0 5px #a8a2a2,
+            0 0 10px #a8a2a2,
+            0 0 20px #a8a2a2,
+            0 0 40px var(--text-color),
+            0 0 80px var(--text-color),
+            0 0 90px var(--text-color),
+            0 0 100px var(--text-color),
+            0 0 150px var(--text-color);
+    }
+
+    20%,
+    24%,
+    55% {
+        text-shadow: none;
+    }
+}
