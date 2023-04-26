@@ -103,7 +103,7 @@ body {
     border: 3px solid var(--indigo-border);
 }
 
-toggle-box:checked + .toggle-label 
+.toggle-box:checked + .toggle-label 
 .toggle-background {
     left: 60px;
     width: 5px;
